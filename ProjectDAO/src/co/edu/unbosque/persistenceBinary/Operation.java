@@ -1,4 +1,4 @@
-package co.edu.unbosque.persistence;
+package co.edu.unbosque.persistenceBinary;
 
 import java.io.EOFException;
 import java.io.FileInputStream;

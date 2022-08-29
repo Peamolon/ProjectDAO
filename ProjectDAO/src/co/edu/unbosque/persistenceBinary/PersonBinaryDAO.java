@@ -1,14 +1,14 @@
-package co.edu.unbosque.persistence;
+package co.edu.unbosque.persistenceBinary;
 
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.Person;
 
-public class PersonDAO {
+public class PersonBinaryDAO {
 	private Operation operation;
 	private ArrayList<Person> people;
 	
-	public PersonDAO() {
+	public PersonBinaryDAO() {
 		operation = new Operation();
 		people = new ArrayList<Person>();
 	}

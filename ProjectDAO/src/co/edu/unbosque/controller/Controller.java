@@ -1,12 +1,12 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.Person;
-import co.edu.unbosque.persistence.PersonDAO;
+import co.edu.unbosque.persistenceBinary.PersonBinaryDAO;
 
 public class Controller {
-	private PersonDAO person;
+	private PersonBinaryDAO person;
 	public Controller() {
-		person = new PersonDAO();
+		person = new PersonBinaryDAO();
 		Person aux = new Person("David", 26, 4353453);
 		try {
 			person.addPerson(aux);
