@@ -1,24 +1,23 @@
 package co.edu.unbosque.controller;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import co.edu.unbosque.model.Person;
 import co.edu.unbosque.persistenceBinary.PersonBinaryDAO;
+import co.edu.unbosque.persistenceSqlite.OperationSQlite;
 
 public class Controller {
 	private PersonBinaryDAO person;
-	public Controller() {
-		person = new PersonBinaryDAO();
-		Person aux = new Person("David", 26, 4353453);
-		try {
-			person.addPerson(aux);
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try {
-			person.getPeople();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	private OperationSQlite operation;
+	public Controller() throws SQLException {
+		operation = new OperationSQlite();
+		
+		Person aux = new Person("Juancho", 53, 1233411, 'M');
+		operation.addPerson(aux);
+		List<Person>people = operation.getAll();
+		for(Person p : people) {
+			System.out.println(p);
 		}
 	}
 
