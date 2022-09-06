@@ -1,43 +1,17 @@
 package co.edu.unbosque.view;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JButton;
-import java.awt.Window.Type;
-import java.awt.SystemColor;
-import java.awt.Dialog.ModalExclusionType;
+import javax.swing.*;
+import javax.swing.border.*;
 
 public class Principal extends JFrame {
 
 	private JPanel contentPane;
+	private JButton btnRegistro, btnEditar, btnVer, btnEliminar;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Principal frame = new Principal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /**
-	 * Create the frame.
-	 */
 	public Principal() {
+		
 		setResizable(false);
 		setForeground(Color.GRAY);
 		setBackground(Color.WHITE);
@@ -48,36 +22,77 @@ public class Principal extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		initialize();
+
+	}
+	
+	public void initialize() {
 		JLabel lblTitulo = new JLabel("Personas");
 		lblTitulo.setFont(new Font("Franchise", Font.PLAIN, 34));
 		lblTitulo.setForeground(Color.DARK_GRAY);
 		lblTitulo.setBounds(161, -14, 127, 63);
 		contentPane.add(lblTitulo);
-		
-		JButton btnRegistro = new JButton("Registro");
+
+		btnRegistro = new JButton("Registro");
 		btnRegistro.setFont(new Font("Franklin Gothic Demi", Font.PLAIN, 11));
 		btnRegistro.setBounds(23, 185, 95, 23);
+		btnRegistro.setActionCommand("BRegister");
 		contentPane.add(btnRegistro);
-		
-		JButton btnEditar = new JButton("Editar");
+
+		btnEditar = new JButton("Editar");
 		btnEditar.setFont(new Font("Franklin Gothic Demi", Font.PLAIN, 11));
 		btnEditar.setBounds(180, 185, 89, 23);
+		btnEditar.setActionCommand("BEdit");
 		contentPane.add(btnEditar);
-		
-		JButton btnVer = new JButton("Visualizar");
+
+		btnVer = new JButton("Visualizar");
 		btnVer.setFont(new Font("Franklin Gothic Demi", Font.PLAIN, 11));
 		btnVer.setBounds(340, 185, 89, 23);
+		btnVer.setActionCommand("BView");
 		contentPane.add(btnVer);
-		
-		JButton btnEliminar = new JButton("Eliminar");
+
+		btnEliminar = new JButton("Eliminar");
 		btnEliminar.setFont(new Font("Franklin Gothic Demi", Font.PLAIN, 11));
 		btnEliminar.setBounds(180, 231, 89, 23);
+		btnEliminar.setActionCommand("BDelete");
 		contentPane.add(btnEliminar);
-		
+
 		JLabel lblFondo = new JLabel("");
 		lblFondo.setIcon(new ImageIcon("C:\\Users\\Felipe\\Downloads\\grupo, personas.jpg"));
 		lblFondo.setBounds(-627, 0, 1108, 857);
 		contentPane.add(lblFondo);
 	}
+
+	public JButton getBtnRegistro() {
+		return btnRegistro;
+	}
+
+	public void setBtnRegistro(JButton btnRegistro) {
+		this.btnRegistro = btnRegistro;
+	}
+
+	public JButton getBtnEditar() {
+		return btnEditar;
+	}
+
+	public void setBtnEditar(JButton btnEditar) {
+		this.btnEditar = btnEditar;
+	}
+
+	public JButton getBtnVer() {
+		return btnVer;
+	}
+
+	public void setBtnVer(JButton btnVer) {
+		this.btnVer = btnVer;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(JButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+	
 }

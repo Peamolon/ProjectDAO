@@ -1,21 +1,13 @@
 package co.edu.unbosque.view;
 
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 
 public class Edit {
 
-	JFrame frame;
+	private JFrame frame;
 	private JButton btnBack;
 	private JTextField textName;
 	private JTextField txtEdad;

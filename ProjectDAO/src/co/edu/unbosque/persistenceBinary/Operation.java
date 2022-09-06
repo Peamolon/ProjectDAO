@@ -1,12 +1,7 @@
 package co.edu.unbosque.persistenceBinary;
 
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 import co.edu.unbosque.model.Person;
 
@@ -31,9 +26,12 @@ public class Operation {
 	
 	public boolean addPeople(ArrayList<Person> people) {
 		try {
-			ObjectOutputStream setData = new ObjectOutputStream(new FileOutputStream("Data/people.dat"));
+			File file = new File("Data\\people.dat");
+			ObjectOutputStream setData = new ObjectOutputStream(new FileOutputStream(file));
+			if(people != null) {
 			setData.writeObject(people);
 			setData.close();
+			}
 			return true;
 		} catch (Exception e) {
 			return false;

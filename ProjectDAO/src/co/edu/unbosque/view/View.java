@@ -1,19 +1,9 @@
 package co.edu.unbosque.view;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JToolBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.ListSelectionModel;
-import javax.swing.JMenuBar;
+import javax.swing.*;
+import javax.swing.table.*;
 
 public class View {
 
@@ -23,8 +13,8 @@ public class View {
 	private JMenu mnNewMenu;
 	private JMenuItem mntmArreglo;
 	private JMenuItem mntmBinary;
-	private JMenuItem mntmNewMenuItem_1;
-	private JMenuItem mntmNewMenuItem_2;
+	private JMenuItem mntmSLQ;
+	private JMenuItem mntmCassandra;
 	private JMenuBar menuBar_1;
 
 	/**
@@ -117,11 +107,11 @@ public class View {
 		mntmBinary = new JMenuItem("Binario");
 		mnNewMenu.add(mntmBinary);
 		
-		mntmNewMenuItem_1 = new JMenuItem("SQL");
-		mnNewMenu.add(mntmNewMenuItem_1);
+		mntmSLQ = new JMenuItem("SQL");
+		mnNewMenu.add(mntmSLQ);
 		
-		mntmNewMenuItem_2 = new JMenuItem("NoSQL");
-		mnNewMenu.add(mntmNewMenuItem_2);
+		mntmCassandra = new JMenuItem("Cassandra");
+		mnNewMenu.add(mntmCassandra);
 		
 		JMenuItem mntmVolver = new JMenuItem("Volver...");
 		mnNewMenu.add(mntmVolver);
@@ -176,19 +166,19 @@ public class View {
 	}
 
 	public JMenuItem getMntmNewMenuItem_1() {
-		return mntmNewMenuItem_1;
+		return mntmSLQ;
 	}
 
 	public void setMntmNewMenuItem_1(JMenuItem mntmNewMenuItem_1) {
-		this.mntmNewMenuItem_1 = mntmNewMenuItem_1;
+		this.mntmSLQ = mntmNewMenuItem_1;
 	}
 
 	public JMenuItem getMntmNewMenuItem_2() {
-		return mntmNewMenuItem_2;
+		return mntmCassandra;
 	}
 
 	public void setMntmNewMenuItem_2(JMenuItem mntmNewMenuItem_2) {
-		this.mntmNewMenuItem_2 = mntmNewMenuItem_2;
+		this.mntmCassandra = mntmNewMenuItem_2;
 	}
 
 	public JMenuBar getMenuBar_1() {

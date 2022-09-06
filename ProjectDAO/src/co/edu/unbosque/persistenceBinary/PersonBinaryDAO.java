@@ -1,10 +1,15 @@
 package co.edu.unbosque.persistenceBinary;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.Person;
 
-public class PersonBinaryDAO {
+public class PersonBinaryDAO implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Operation operation;
 	private ArrayList<Person> people;
 	
@@ -13,12 +18,13 @@ public class PersonBinaryDAO {
 		people = new ArrayList<Person>();
 	}
 	
-	public void addPerson(Person p) throws ClassNotFoundException{
+	public boolean addPerson(Person p) throws ClassNotFoundException{
 		if(operation.getPeople()!=null) {
 			people = operation.getPeople();
 		}
 		people.add(p);
 		operation.addPeople(people);
+		return true;
 	}
 	
 	public void getPeople() throws ClassNotFoundException {
